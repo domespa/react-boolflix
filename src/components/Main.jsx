@@ -7,17 +7,17 @@ export default function Main() {
   // CREO UNA FUNZIONE PER IMPLEMENTARE LE BANDIERE
   function flags(lang) {
     const nationflags = {
-      en: "EN",
+      en: "GB",
       it: "IT",
       es: "ES",
       fr: "FR",
       de: "DE",
+      jp: "JP",
     };
     const nationflag = nationflags[lang];
-    return (
-      nationflag &&
-      `https://purecatamphetamine.github.io/country-flag-icons/3x2/${nationflag}.svg`
-    );
+    return nationflag
+      ? `https://purecatamphetamine.github.io/country-flag-icons/3x2/${nationflag}.svg`
+      : `https://cdn.pixabay.com/photo/2016/04/02/21/01/earth-1303628_1280.png`;
   }
   return (
     <main>
