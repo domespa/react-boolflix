@@ -8,8 +8,9 @@ const DataContext = createContext();
 function DataProvider({ children }) {
   //  QUI VERRANNO AGGIUNTI I USESTATE DA CONDIVIDERE
   const [movies, setMovies] = useState([]);
+  const [tvmovies, setTvmovies] = useState([]);
   return (
-    <DataContext.Provider value={{ movies, setMovies }}>
+    <DataContext.Provider value={{ movies, setMovies, tvmovies, setTvmovies }}>
       {children}
     </DataContext.Provider>
   ); // VALUE SARANNO I DATI CHE SI TRASMETTERANNO MENTRE IN CHILDREN (HEADER & MAIN) CI SARANNO I DATI MODIFICATI SECONDO VALUE

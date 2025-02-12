@@ -9,18 +9,33 @@ export default function SearchBar() {
   const [search, setSearch] = useState(""); // 1
 
   const { setMovies } = useDataContext();
+  const { setTvmovies } = useDataContext();
 
   const handleSearch = (e) => {
     e.preventDefault();
 
+    const apis = [
+      "https://api.themoviedb.org/3/search/movie",
+      "https://api.themoviedb.org/3/search/tv",
+    ];
+    //  UTILIZZO AXIOS.ALL PER ITERARE SU DUE RICHIESTE API - USO POI LO SPREAD PER RICHIAMARE I RISULTATI
     axios
-      .get("https://api.themoviedb.org/3/search/movie", {
-        params: {
-          api_key: "2f6764f9e34d5ba8605084acb6808433",
-          query: search,
-        },
-      })
-      .then((res) => setMovies(res.data.results));
+      .all(
+        apis.map((api) =>
+          axios.get(api, {
+            params: {
+              api_key: "2f6764f9e34d5ba8605084acb6808433",
+              query: search,
+            },
+          })
+        )
+      )
+      .then(
+        axios.spread((movieRes, TvmoviesRes) => {
+          setMovies(movieRes.data.results);
+          setTvmovies(TvmoviesRes.data.results);
+        })
+      );
   };
 
   return (
