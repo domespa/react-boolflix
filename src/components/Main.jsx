@@ -28,6 +28,11 @@ export default function Main() {
             Titolo: <strong>{movie.title}</strong> <br />
             Titolo Originale: <strong>{movie.original_title}</strong>
             <br />
+            <img
+              src={`https://image.tmdb.org/t/p/w342/${movie.backdrop_path}`}
+              alt={movie.original_title}
+            />
+            <br />
             Lingua: <strong>{movie.original_language}</strong>
             <img
               className="flag-cont"
