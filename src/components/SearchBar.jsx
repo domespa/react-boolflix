@@ -44,7 +44,7 @@ export default function SearchBar() {
         type="search"
         name=""
         id=""
-        placeholder="Cerca"
+        placeholder="Inserisci un titolo..."
         value={search} // 1
         onChange={(e) => setSearch(e.target.value)} // 1
       />

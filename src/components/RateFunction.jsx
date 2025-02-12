@@ -5,9 +5,9 @@ export default function RateFunction({ voteaverage }) {
     let stars = [];
     for (let i = 1; i <= 5; i++) {
       if (i <= vote) {
-        stars.push(<i className="fa-solid fa-star"></i>);
+        stars.push(<i className="fa-solid fa-star" key={i}></i>);
       } else {
-        stars.push(<i className="fa-regular fa-star"></i>);
+        stars.push(<i className="fa-regular fa-star" key={i}></i>);
       }
     }
     return stars;

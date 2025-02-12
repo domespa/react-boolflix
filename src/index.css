@@ -1,8 +1,91 @@
+/*-------------
+    RESET
+-------------*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/*-------------
+      TYPO
+-------------*/
+
+/*-------------
+      GENERAL
+-------------*/
+.container {
+  width: 1200px;
+  margin: auto;
+}
 .flag-cont {
-  width: 15px;
-  padding-left: 2px;
+  width: 18px;
+  margin-left: 6px;
 }
 
 li {
   padding-bottom: 20px;
+}
+
+/*-------------
+    HEADER
+-------------*/
+header {
+  display: flex;
+  background-color: rgb(160, 52, 52);
+}
+
+header .container {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 130px;
+  padding: 10px;
+  border-radius: 100%;
+}
+
+input {
+  margin-right: 20px;
+  width: 200px;
+  height: 30px;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+/*-------------
+    MAIN
+-------------*/
+.container h2 {
+  text-align: center;
+  padding: 20px 0;
+}
+
+/*-------------
+    CARD
+-------------*/
+.movies-list {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie-card {
+  width: calc(100% / 5);
+}
+.movie-card h3 {
+  text-align: center;
+  min-height: 55px;
+}
+.card-img {
+  max-width: 100%;
 }

@@ -1,9 +1,13 @@
 import SearchBar from "./SearchBar";
+import Logo from "./Logo";
+
 export default function Header() {
   return (
     <header>
-      <h1>Questo è l'header</h1>
-      <SearchBar />
+      <div className="container">
+        <Logo />
+        <SearchBar />
+      </div>
     </header>
   );
 }

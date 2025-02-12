@@ -24,31 +24,34 @@ export default function Main() {
   }
   return (
     <main>
-      <h2>Lista Film</h2>
-      <ul>
-        {movies.map((movie) => (
-          <li key={movie.id}>
-            Titolo: <strong>{movie.title}</strong> <br />
-            Titolo Originale: <strong>{movie.original_title}</strong>
-            <br />
-            <img
-              src={`https://image.tmdb.org/t/p/w342/${movie.backdrop_path}`}
-              alt={movie.original_title}
-            />
-            <br />
-            Lingua: <strong>{movie.original_language}</strong>
-            <img
-              className="flag-cont"
-              src={flags(movie.original_language)}
-              alt=""
-            ></img>
-            <br />
-            Voto: <strong>{movie.vote_average}</strong>
-            <br />
-            <RateFunction voteaverage={movie.vote_average} />
-          </li>
-        ))}
-      </ul>
+      <div className="container">
+        {movies.length > 0 && <h2>Lista Film</h2>}
+        <div className="movies-list">
+          {movies.map((movie) => (
+            <div className="movie-card" key={movie.id}>
+              <h3>{movie.original_title}</h3>
+              <img
+                className="card-img"
+                src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+                alt={movie.original_title}
+              />
+              <p>
+                Titolo Originale: <strong>{movie.title}</strong> <br />
+                Lingua: <strong>{movie.original_language}</strong>
+                <img
+                  className="flag-cont"
+                  src={flags(movie.original_language)}
+                  alt=""
+                />
+                <br />
+                Voto: <strong>{movie.vote_average}</strong>
+                <br />
+              </p>
+              <RateFunction voteaverage={movie.vote_average} />
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
