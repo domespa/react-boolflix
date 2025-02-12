@@ -18,7 +18,7 @@ export default function SearchBar() {
       "https://api.themoviedb.org/3/search/movie",
       "https://api.themoviedb.org/3/search/tv",
     ];
-    //  UTILIZZO AXIOS.ALL PER ITERARE SU DUE RICHIESTE API - USO POI LO SPREAD PER RICHIAMARE I RISULTATI
+    //  UTILIZZO AXIOS.ALL PER ITERARE SU DUE RICHIESTE API - USO POI SPREAD PER RICHIAMARE I RISULTATI
     axios
       .all(
         apis.map((api) =>

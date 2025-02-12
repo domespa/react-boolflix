@@ -1,3 +1,6 @@
+// FUNCTION STARS
+import RateFunction from "./RateFunction";
+
 // IMPORTO IL CONTESTO PER ADARE A ITERARE SU MOVIES
 import { useDataContext } from "../contexts/DataContext";
 
@@ -42,6 +45,7 @@ export default function Main() {
             <br />
             Voto: <strong>{movie.vote_average}</strong>
             <br />
+            <RateFunction voteaverage={movie.vote_average} />
           </li>
         ))}
       </ul>
