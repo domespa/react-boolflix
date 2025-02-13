@@ -9,12 +9,16 @@
 /*-------------
       TYPO
 -------------*/
+body {
+  font-family: "Roboto", serif;
+  overflow-y: hidden;
+}
 
 /*-------------
       GENERAL
 -------------*/
 .container {
-  width: 1200px;
+  width: 1300px;
   margin: auto;
 }
 .flag-cont {
@@ -26,22 +30,27 @@ li {
   padding-bottom: 20px;
 }
 
+i {
+  color: yellow;
+}
+
 /*-------------
     HEADER
 -------------*/
 header {
   display: flex;
-  background-color: rgb(160, 52, 52);
+  background-color: #14213d;
+  height: 15vh;
 }
 
 header .container {
-  justify-content: space-around;
+  justify-content: space-between;
   display: flex;
   align-items: center;
 }
 
 header img {
-  width: 130px;
+  width: 120px;
   padding: 10px;
   border-radius: 100%;
 }
@@ -65,8 +74,16 @@ button {
 /*-------------
     MAIN
 -------------*/
-.container h2 {
-  text-align: center;
+main {
+  background-color: #e5e5e5;
+  height: 70vh;
+}
+.main-cont {
+  width: 1400px;
+  margin: auto;
+}
+.main-cont h1 {
+  color: #a93300;
   padding: 20px 0;
 }
 
@@ -75,12 +92,13 @@ button {
 -------------*/
 .movies-list {
   display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 40px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 .movie-card {
-  width: calc(100% / 5);
+  width: 200px;
+  flex-shrink: 0;
 }
 .movie-card h3 {
   text-align: center;
@@ -88,4 +106,18 @@ button {
 }
 .card-img {
   max-width: 100%;
+}
+
+/*-------------
+    FOOTER
+-------------*/
+footer {
+  height: 15vh;
+  background-color: #14213d;
+}
+
+footer img {
+  width: 120px;
+  padding: 10px;
+  border-radius: 100%;
 }

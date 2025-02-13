@@ -24,8 +24,8 @@ export default function Main() {
   }
   return (
     <main>
-      <div className="container">
-        {movies.length > 0 && <h2>Lista Film</h2>}
+      <div className="main-cont">
+        {movies.length > 0 && <h1>Quello che abbiamo trovato...</h1>}
         <div className="movies-list">
           {movies.map((movie) => (
             <div className="movie-card" key={movie.id}>
