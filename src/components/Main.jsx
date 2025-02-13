@@ -6,6 +6,7 @@ import { useDataContext } from "../contexts/DataContext";
 
 export default function Main() {
   const { movies } = useDataContext();
+  const { tvmovies } = useDataContext();
 
   // CREO UNA FUNZIONE PER IMPLEMENTARE LE BANDIERE
   function flags(lang) {
@@ -25,29 +26,74 @@ export default function Main() {
   return (
     <main>
       <div className="main-cont">
-        {movies.length > 0 && <h1>Quello che abbiamo trovato...</h1>}
+        {/*SECTION PER I FILM */}
+        {movies.length > 0 && <h1>I film che abbiamo trovato...</h1>}
         <div className="movies-list">
           {movies.map((movie) => (
             <div className="movie-card" key={movie.id}>
-              <h3>{movie.original_title}</h3>
+              <div className="cover-hover">
+                <p>
+                  <strong>Titolo:</strong> {movie.original_title} <br />
+                  <br />
+                  <strong>Titolo Originale:</strong> {movie.title} <br />
+                  {/* Lingua: <strong>{movie.original_language}</strong> */}
+                  {/* <img
+                    className="flag-cont"
+                    src={flags(movie.original_language)}
+                    alt=""
+                  /> */}
+                  {/* <br /> */}
+                  <strong>
+                    {" "}
+                    Voto: {movie.vote_average}{" "}
+                    <RateFunction voteaverage={movie.vote_average} />{" "}
+                  </strong>
+                  <br />
+                  <strong>Overview:</strong>
+                  {movie.overview}
+                </p>
+              </div>
               <img
                 className="card-img"
                 src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
                 alt={movie.original_title}
               />
-              <p>
-                Titolo Originale: <strong>{movie.title}</strong> <br />
-                Lingua: <strong>{movie.original_language}</strong>
-                <img
-                  className="flag-cont"
-                  src={flags(movie.original_language)}
-                  alt=""
-                />
-                <br />
-                Voto: <strong>{movie.vote_average}</strong>
-                <br />
-              </p>
-              <RateFunction voteaverage={movie.vote_average} />
+            </div>
+          ))}
+        </div>
+
+        {tvmovies.length > 0 && <h1>Le serie che abbiamo trovato...</h1>}
+        <div className="movies-list">
+          {tvmovies.map((tvmovie) => (
+            <div className="movie-card" key={tvmovie.id}>
+              <div className="cover-hover">
+                <p>
+                  <strong>Titolo:</strong> {tvmovie.name} <br />
+                  <br />
+                  <strong>Titolo Originale:</strong> {tvmovie.original_name}{" "}
+                  <br />
+                  {/* Lingua: <strong>{movie.original_language}</strong> */}
+                  {/* <img
+                    className="flag-cont"
+                    src={flags(movie.original_language)}
+                    alt=""
+                  /> */}
+                  {/* <br /> */}
+                  <strong>
+                    {" "}
+                    Voto: {tvmovie.vote_average}{" "}
+                    <RateFunction voteaverage={tvmovie.vote_average} />{" "}
+                  </strong>
+                  <br />
+                  <strong>Overview:</strong>
+                  {tvmovie.overview}
+                </p>
+              </div>
+              <img
+                className="card-img"
+                src={`https://image.tmdb.org/t/p/w342/${tvmovie.poster_path}`}
+                alt={tvmovie.original_title}
+              />
             </div>
           ))}
         </div>
